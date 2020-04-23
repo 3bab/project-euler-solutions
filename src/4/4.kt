@@ -1,4 +1,4 @@
-import java.util.*
+package `4`
 
 /*
 A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
@@ -6,7 +6,7 @@ A palindromic number reads the same both ways. The largest palindrome made from 
 Find the largest palindrome made from the product of two 3-digit numbers.
  */
 
-fun largestPalindrome(): Long {
+fun main(args : Array<String>) {
     var factorA = 800L // overloads, so we start from bigger number 800
     var factorB = 800L
     var max = 0L
@@ -17,7 +17,7 @@ fun largestPalindrome(): Long {
             }
         }
     }
-    return max
+    println(max)
 }
 
 @ExperimentalUnsignedTypes
@@ -30,5 +30,3 @@ fun isPalindrome(n: Long): Boolean {
     }
     return true
 }
-
-largestPalindrome()
