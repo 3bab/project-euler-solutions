@@ -1,4 +1,4 @@
-package `6`/*
+package `6_SumSquareDifference`/*
 The `2`.sum of the squares of the first ten natural numbers is,
 
 1^2+2^2+...+10^2=385

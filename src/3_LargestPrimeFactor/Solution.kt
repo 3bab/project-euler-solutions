@@ -1,4 +1,4 @@
-package `3`/*
+package `3_LargestPrimeFactor`/*
 The prime factors of 13195 are 5, 7, 13 and 29.
 
 What is the largest prime factor of the number 600851475143 ?
@@ -7,7 +7,7 @@ What is the largest prime factor of the number 600851475143 ?
 // Use prime factorization https://www.mathsisfun.com/prime-factorization.html
 
 fun main(args : Array<String>) {
-    var n = args[0].toLong()
+    var n = 10L
     var maxFactor = 0L
     var div = 2
     while (n != 0L) {

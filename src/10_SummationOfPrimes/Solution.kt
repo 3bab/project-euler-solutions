@@ -1,6 +1,7 @@
-package `10`
+package `10_SummationOfPrimes`
 
 import java.math.BigInteger
+import java.util.*
 
 /*
 The `2`.sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
