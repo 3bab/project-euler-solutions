@@ -1,7 +1,5 @@
 package `10_SummationOfPrimes`
 
-import java.math.BigInteger
-import java.util.*
 
 /*
 The `2`.sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
@@ -9,9 +7,12 @@ The `2`.sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
 Find the `2`.sum of all the primes below two million.
  */
 
-fun main(args : Array<String>) {
+import java.math.BigInteger
+import java.util.*
+
+fun main(args: Array<String>) {
     val maxValue = 2000000
-    val numberArray = BooleanArray(maxValue, {true})
+    val numberArray = BooleanArray(maxValue, { true })
     for (i in 2 until maxValue) {
         if (i * i > maxValue) break
         if (numberArray[i] == true) {

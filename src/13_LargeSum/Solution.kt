@@ -1,11 +1,11 @@
 package `13_LargeSum`
 
-import java.io.File
-import java.util.ArrayList
-
 /*
 Work out the first ten digits of the sum of the following one-hundred 50-digit numbers.
  */
+
+import java.io.File
+import java.util.ArrayList
 
 fun main() {
     val numbers: ArrayList<String> = readFileIntoMatrix()
