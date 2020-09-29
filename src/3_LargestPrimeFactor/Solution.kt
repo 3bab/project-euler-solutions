@@ -9,7 +9,7 @@ What is the largest prime factor of the number 600851475143 ?
 // Use prime factorization https://www.mathsisfun.com/prime-factorization.html
 
 fun main(args : Array<String>) {
-    var n = 10L
+    var n = 600851475143
     var maxFactor = 0L
     var div = 2
     while (n != 0L) {

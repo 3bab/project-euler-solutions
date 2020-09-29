@@ -7,10 +7,11 @@ Find the largest palindrome made from the product of two 3-digit numbers.
  */
 
 fun main(args: Array<String>) {
-    /*
-    var factorA = 800L // overloads, so we start from bigger number 800
-    var factorB = 800L
+
+    var factorA = 100L // overloads, so we start from bigger number 800
+    var factorB = 100L
     var max = 0L
+    /*
     var res =
             LongStream.range(factorA, 1000)
                     .forEach { i ->
@@ -18,17 +19,23 @@ fun main(args: Array<String>) {
                                 .filter { j -> isPalindrome(i * j) }
                                 .reduce { Long::plus }
                     }
-
+*/
+    var multiplierA = factorA
+    var multiplierB = factorB
+    val start = System.currentTimeMillis();
     for (i in factorA until 1000) {
         for (j in factorB until 1000) {
-            if (isPalindrome(i * j)) {
+            if (isPalindrome(i * j) && i * j > max) {
+                multiplierA = i
+                multiplierB = j
                 max = i * j
             }
         }
     }
+    val end = System.currentTimeMillis();
 
-     */
-    //println(max)
+    println("Palindrome found $multiplierA * $multiplierB = ${multiplierA * multiplierB}")
+    println("It took: ${end - start} ms")
 }
 
 @ExperimentalUnsignedTypes
