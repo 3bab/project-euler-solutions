@@ -8,14 +8,17 @@ What is the smallest positive number that is evenly divisible by all of the numb
 
 fun main(args : Array<String>) {
     var smallest = 0L
-    for (i in 10 until Long.MAX_VALUE) {
-        if (divide(i, 2)) smallest = i
+    for (i in 20 until Long.MAX_VALUE) {
+        if (dividable(i, 2)) {
+            smallest = i
+            break
+        }
     }
-    println(smallest)
+    println("Number found $smallest")
 }
 
-fun divide(n: Long, div: Long): Boolean {
+fun dividable(n: Long, div: Long): Boolean {
     if (div == 21L) return true
-    if (n.rem(div) == 0L) return divide(n, div + 1)
+    if (n.rem(div) == 0L) return dividable(n, div + 1)
     return false
 }
