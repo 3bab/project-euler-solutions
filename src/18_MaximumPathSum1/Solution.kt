@@ -75,7 +75,7 @@ private fun calculateTotal(triangle: HashMap<Int, List<Int>>): Int {
 
 private fun calculateAndReplaceRow(row: Int, triangle: HashMap<Int, List<Int>>): HashMap<Int, List<Int>> {
     val newRow: ArrayList<Int> = ArrayList()
-    for (element in 0 until triangle.get(row)!!.size) {
+    for (element in triangle.get(row)!!.indices) {
         var newElement = 0
         if (triangle[row + 1]!![element] > triangle[row + 1]!![element + 1]) {
             newElement = triangle.get(row + 1)!!.get(element) + triangle.get(row)!!.get(element)
@@ -98,7 +98,7 @@ fun main() {
 }
 
 /*
-Notes: Use bottom-up algorithm. The top-down is greedy and not scalable.
+Notes: Use bottom-up algorithm approach. The top-down is greedy and not scalable.
  */
 
 

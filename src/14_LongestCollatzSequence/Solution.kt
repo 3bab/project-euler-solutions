@@ -32,7 +32,6 @@ fun main() {
             counter++
         }
         if (counter > maxTermCounter) maxTermCounter = counter
-        //println(i)
     }
     println(maxTermCounter)
 }
