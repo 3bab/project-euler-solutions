@@ -9,7 +9,7 @@ import kotlin.test.assertEquals
 What is the sum of the digits of the number 21000?
  */
 
-fun getSum(): Int {
+private fun getSum(): Int {
     var sum = 0
     val powerValue = BigInteger.valueOf(2).pow(1000).toString()
     for (digit in powerValue.toCharArray()) {

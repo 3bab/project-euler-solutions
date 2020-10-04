@@ -12,10 +12,10 @@ NOTE: Do not count spaces or hyphens. For example, 342 (three hundred and forty-
 (one hundred and fifteen) contains 20 letters. The use of "and" when writing out numbers is in compliance with British usage.
  */
 
-var untilTwenty: HashMap<Int, String> = HashMap()
-var tens: HashMap<Int, String> = HashMap()
+private var untilTwenty: HashMap<Int, String> = HashMap()
+private var tens: HashMap<Int, String> = HashMap()
 
-fun prepareWords() {
+private fun prepareWords() {
     untilTwenty.put(1, "one")
     untilTwenty.put(2, "two")
     untilTwenty.put(3, "three")
@@ -45,7 +45,7 @@ fun prepareWords() {
     tens.put(9, "ninety")
 }
 
-fun generateNumberString(number: Int, str: String): String {
+private fun generateNumberString(number: Int, str: String): String {
     if (number == 0) return str
     var tmpStr = str
     if (number < 20) {
@@ -63,14 +63,14 @@ fun generateNumberString(number: Int, str: String): String {
 }
 
 
-fun calculateLength(number: Int): Int {
+private fun calculateLength(number: Int): Int {
     return generateNumberString(number, "")
             .replace(" ", "", true)
             .replace("-", "", true)
             .length
 }
 
-fun countLettersAndPrint(biggetsNumber: Int): Int {
+private fun countLettersAndPrint(biggetsNumber: Int): Int {
     var sum = 0
     for (i in 1..biggetsNumber) sum += calculateLength(i)
     println(sum)
