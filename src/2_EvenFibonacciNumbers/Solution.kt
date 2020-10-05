@@ -21,6 +21,6 @@ fun main(args : Array<String>) {
 }
 
 fun fibonacci(x: Int): Int {
-    if (x < 2) return x
+    if (x < 3) return x
     return fibonacci(x - 1) + fibonacci(x - 2)
 }

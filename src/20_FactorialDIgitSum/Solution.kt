@@ -1,6 +1,7 @@
 package `20_FactorialDIgitSum`
 
 import java.math.BigInteger
+import kotlin.test.assertEquals
 
 /*
 n! means n × (n − 1) × ... × 3 × 2 × 1
@@ -12,17 +13,19 @@ Find the sum of the digits in the number 100!
  */
 
 fun findSum(factor: Int): Int {
-    val factorial: BigInteger = findFactorial(factor, 1.toBigInteger())
+    val factorial: BigInteger = findFactorial(factor)
     var sum = 0
     factorial.toString().toCharArray().forEach { i -> sum += Character.getNumericValue(i) }
     return sum
 }
 
-fun findFactorial(factor: Int, factorial: BigInteger): BigInteger {
-    if (factor == 1) return factorial
-    return factor.toBigInteger() * findFactorial(factor - 1, factorial)
+fun findFactorial(factor: Int): BigInteger {
+    if (factor == 1) return 1.toBigInteger()
+    return factor.toBigInteger() * findFactorial(factor - 1)
 }
 
 fun main() {
-    println(findSum(100))
+    val sum = findSum(100)
+    println(sum)
+    assertEquals(648, sum)
 }
