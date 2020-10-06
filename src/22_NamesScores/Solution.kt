@@ -5,7 +5,6 @@ import java.util.concurrent.atomic.AtomicInteger
 import java.util.stream.Collectors
 import kotlin.test.assertEquals
 
-
 /*
 Using names.txt (right click and 'Save Link/Target As...'), a 46K text file containing over five-thousand first names,
 begin by sorting it into alphabetical order. Then working out the alphabetical value for each name, multiply this value
@@ -17,9 +16,8 @@ the 938th name in the list. So, COLIN would obtain a score of 938 × 53 = 49714.
 What is the total of all the name scores in the file?
  */
 
-
 fun main() {
-    val names = File("/Users/gintas.palionis/IdeaProjects/project-euler-solutions/src/22_NamesScores/p022_names.txt")
+    val names = File("resources/p022_names.txt")
             .readLines()
             .get(0)
             .split(",")

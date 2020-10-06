@@ -14,9 +14,7 @@ Find the sum of the digits in the number 100!
 
 fun findSum(factor: Int): Int {
     val factorial: BigInteger = findFactorial(factor)
-    var sum = 0
-    factorial.toString().toCharArray().forEach { i -> sum += Character.getNumericValue(i) }
-    return sum
+    return factorial.toString().toCharArray().map { i -> Character.getNumericValue(i) }.sum()
 }
 
 fun findFactorial(factor: Int): BigInteger {
