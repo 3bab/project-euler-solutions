@@ -1,7 +1,5 @@
 package `23_NonAbundantSums`
 
-import java.util.stream.IntStream
-
 /*
 A perfect number is a number for which the sum of its proper divisors is exactly equal to the number. For example,
 the sum of the proper divisors of 28 would be 1 + 2 + 4 + 7 + 14 = 28, which means that 28 is a perfect number.
@@ -18,11 +16,11 @@ this limit.
 Find the sum of all the positive integers which cannot be written as the sum of two abundant numbers.
  */
 
-private fun findAllAbundantNumbers(): ArrayList<Long> {
-    val abundantNumbers = ArrayList<Long>()
+private fun findAllAbundantNumbers(): HashSet<Long> {
+    val abundantNumbers = HashSet<Long>()
     for (number in 12L..28123L) {
         var sum = 0L
-        for (divisor in 1..number/2) {
+        for (divisor in 1..number / 2) {
             if (number.rem(divisor) == 0L) sum += divisor
         }
         if (sum > number) abundantNumbers.add(number)
@@ -30,11 +28,9 @@ private fun findAllAbundantNumbers(): ArrayList<Long> {
     return abundantNumbers
 }
 
-private fun canBeSumOfAbundant(number: Int, abundantNumbers: ArrayList<Long>): Boolean {
-    for (i in 0 until abundantNumbers.size) {
-        val summandCandidate = number - abundantNumbers.get(i)
-        val result = abundantNumbers.filter { i -> i == summandCandidate }.count()
-        if (result != 0) return true
+private fun canBeSumOfAbundant(number: Int, abundantNumbers: HashSet<Long>): Boolean {
+    for (abundantNumber in abundantNumbers) {
+        if (abundantNumbers.contains(number - abundantNumber)) return true
     }
     return false
 }
@@ -43,8 +39,7 @@ private fun findSum(): Long {
     var sum = 0L
     val abundantNumbers = findAllAbundantNumbers()
     for (i in 1..28123) {
-        println(i)
-        if(!canBeSumOfAbundant(i, abundantNumbers)) sum += i
+        if (!canBeSumOfAbundant(i, abundantNumbers)) sum += i
     }
     return sum
 }
@@ -57,4 +52,5 @@ fun main() {
 Notes: the algo is quite slow.
 To speed up:
 -- use filter instead of find
+-- use hash set instead of array list
  */
