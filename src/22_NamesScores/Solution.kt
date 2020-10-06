@@ -16,8 +16,19 @@ the 938th name in the list. So, COLIN would obtain a score of 938 × 53 = 49714.
 What is the total of all the name scores in the file?
  */
 
+private fun calculateScores(names: List<String>): HashMap<String, Int> {
+    val sortedNames = names.stream().sorted().collect(Collectors.toList())
+    val scoreMap: HashMap<String, Int> = HashMap()
+    val index = AtomicInteger(0)
+    sortedNames.stream().forEach { n ->
+        val sum: Int = n.toCharArray().map { ch -> ch.toInt() - 64 }.sum()
+        scoreMap.put(n, sum * index.incrementAndGet())
+    }
+    return scoreMap
+}
+
 fun main() {
-    val names = File("resources/p022_names.txt")
+    val names = File("resources/data22.txt")
             .readLines()
             .get(0)
             .split(",")
@@ -28,17 +39,6 @@ fun main() {
     val scoreMap: HashMap<String, Int> = calculateScores(names)
     assertEquals(49714, scoreMap.get("COLIN"))
     print(scoreMap.map { e -> e.value }.sum())
-}
-
-fun calculateScores(names: List<String>): HashMap<String, Int> {
-    val sortedNames = names.stream().sorted().collect(Collectors.toList())
-    val scoreMap: HashMap<String, Int> = HashMap()
-    val index = AtomicInteger(0)
-    sortedNames.stream().forEach { n ->
-        val sum: Int = n.toCharArray().map { ch -> ch.toInt() - 64 }.sum()
-        scoreMap.put(n, sum * index.incrementAndGet())
-    }
-    return scoreMap
 }
 
 
