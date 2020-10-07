@@ -23,20 +23,30 @@ The 12th term, F12, is the first term to contain three digits.
 What is the index of the first term in the Fibonacci sequence to contain 1000 digits?
  */
 
-fun findFibonacciLengthOf(length: Int): Long {
-    var index = 1L
-    while (getFibonacci(index).toString().length < length) {
+private val cache: HashMap<Int, String> = HashMap()
+
+private fun findFibonacciLengthOf(length: Int): Int {
+    var index = 1
+    while (true) {
+        val fibonacciNumber = getFibonacci(index)
+        if (fibonacciNumber.length >= length) break
+        cache.put(index, fibonacciNumber)
         index++
     }
-    return index
+    return ++index
 }
 
-fun getFibonacci(index: Long): Long {
-
-    return 0L
+private fun getFibonacci(x: Int): String {
+    if (x < 3) return x.toString()
+    return (cache.get(x - 1)!!.toBigInteger() + cache.get(x - 2)!!.toBigInteger()).toString()
 }
 
 fun main() {
     print(findFibonacciLengthOf(1000))
 }
+
+/*
+Notes:
+-- using cache to improve Big-O
+ */
 
