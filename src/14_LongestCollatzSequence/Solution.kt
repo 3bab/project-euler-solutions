@@ -20,18 +20,22 @@ NOTE: Once the chain starts the terms are allowed to go above one million.
 
 fun main() {
     var maxTermCounter = 1
-    for (i in 2 until 1000000) {
+    var indexNumber = 2L
+    for (i in 2 until 1000000L) {
         var term = i
         var counter = 1
-        while (term != 1) {
-            if (term.rem(2) == 0) {
+        while (term != 1L) {
+            if (term.rem(2) == 0L) {
                 term /= 2
             } else {
                 term = 3 * term + 1
             }
             counter++
         }
-        if (counter > maxTermCounter) maxTermCounter = counter
+        if (counter > maxTermCounter) {
+            maxTermCounter = counter
+            indexNumber = i
+        }
     }
-    println(maxTermCounter)
+    println(indexNumber)
 }
