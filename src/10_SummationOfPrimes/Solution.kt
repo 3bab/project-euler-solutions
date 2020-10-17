@@ -7,25 +7,13 @@ The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
 Find the sum of all the primes below two million.
  */
 
+import util.generatePrimes
 import java.math.BigInteger
 import java.util.*
+import kotlin.test.assertEquals
 
 fun main(args: Array<String>) {
-    val maxValue = 2000000
-    val numberArray = BooleanArray(maxValue, { true })
-    for (i in 2 until maxValue) {
-        if (i * i > maxValue) break
-        if (numberArray[i] == true) {
-            for (j in i * i until maxValue step i) {
-                numberArray[j] = false
-            }
-        }
-    }
-    val primes = ArrayList<Int>()
-    for (i in 2 until maxValue) {
-        if (numberArray[i] == true) primes.add(i)
-        if (primes.last() > maxValue) break
-    }
+    val primes = generatePrimes(2000000)
     var sum = BigInteger("0")
     println(primes.first())
     println(primes.last())
@@ -33,5 +21,6 @@ fun main(args: Array<String>) {
         sum = sum.plus(BigInteger(primes.get(i).toString()))
     }
     println(sum)
+    assertEquals("142913828922", sum.toString())
 }
 
