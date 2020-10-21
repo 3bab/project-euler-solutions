@@ -7,7 +7,7 @@ import kotlin.test.assertEquals
 https://projecteuler.net/problem=29
  */
 
-fun findLength(a: Int, b: Int): Int {
+private fun findLength(a: Int, b: Int): Int {
     val set: HashSet<BigInteger> = HashSet()
     for(i in 2L..a) {
         for(j in 2..b) {

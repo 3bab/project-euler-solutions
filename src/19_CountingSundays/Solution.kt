@@ -1,9 +1,7 @@
 package `19_CountingSundays`
 
-import java.time.DayOfWeek
 import kotlin.test.assertEquals
 import kotlin.test.assertFalse
-import kotlin.test.assertTrue
 
 /*
 You are given the following information, but you may prefer to do some research for yourself.

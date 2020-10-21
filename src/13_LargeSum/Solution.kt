@@ -5,7 +5,7 @@ Work out the first ten digits of the sum of the following one-hundred 50-digit n
  */
 
 import java.io.File
-import java.util.ArrayList
+import java.util.*
 
 fun main() {
     val numbers: ArrayList<String> = readFileIntoMatrix()

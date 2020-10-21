@@ -9,7 +9,6 @@ Find the sum of all the primes below two million.
 
 import util.generatePrimes
 import java.math.BigInteger
-import java.util.*
 import kotlin.test.assertEquals
 
 fun main(args: Array<String>) {

@@ -1,6 +1,5 @@
 package util
 
-import fanta.primes
 import java.util.*
 import kotlin.test.assertTrue
 
