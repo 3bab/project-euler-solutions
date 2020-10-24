@@ -11,5 +11,4 @@ import java.util.stream.IntStream
 
 fun main(args: Array<String>) {
     println(IntStream.range(0, 1000).filter { i -> i.rem(3) == 0 || i.rem(5) == 0 }.sum())
-    //for (i in 0 until 100000) if (i.rem(3) == 0 || i.rem(5) == 0) sum += i
 }

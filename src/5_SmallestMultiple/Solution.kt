@@ -6,6 +6,12 @@ package `5_SmallestMultiple`
 What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
  */
 
+private fun divisible(n: Long, div: Long): Boolean {
+    if (div == 21L) return true
+    if (n.rem(div) == 0L) return divisible(n, div + 1)
+    return false
+}
+
 fun main(args : Array<String>) {
     var smallest = 0L
     for (i in 20 until Long.MAX_VALUE) {
@@ -17,8 +23,3 @@ fun main(args : Array<String>) {
     println("Number found $smallest")
 }
 
-fun divisible(n: Long, div: Long): Boolean {
-    if (div == 21L) return true
-    if (n.rem(div) == 0L) return divisible(n, div + 1)
-    return false
-}

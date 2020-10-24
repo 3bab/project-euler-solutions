@@ -12,10 +12,7 @@ What is the sum of the digits of the number 2^1000?
 private fun getSum(): Int {
     var sum = 0
     val powerValue = BigInteger.valueOf(2).pow(1000).toString()
-    for (digit in powerValue.toCharArray()) {
-        sum += Character.getNumericValue(digit)
-    }
-    println(sum)
+    for (digit in powerValue.toCharArray()) sum += Character.getNumericValue(digit)
     return sum
 }
 

@@ -12,18 +12,16 @@ and the sum of the digits in the number 10! is 3 + 6 + 2 + 8 + 8 + 0 + 0 = 27.
 Find the sum of the digits in the number 100!
  */
 
-fun findSum(factor: Int): Int {
+private fun findSum(factor: Int): Int {
     val factorial: BigInteger = findFactorial(factor)
     return factorial.toString().toCharArray().map { i -> Character.getNumericValue(i) }.sum()
 }
 
-fun findFactorial(factor: Int): BigInteger {
+private fun findFactorial(factor: Int): BigInteger {
     if (factor == 1) return 1.toBigInteger()
     return factor.toBigInteger() * findFactorial(factor - 1)
 }
 
 fun main() {
-    val sum = findSum(100)
-    println(sum)
-    assertEquals(648, sum)
+    assertEquals(648, findSum(100))
 }
