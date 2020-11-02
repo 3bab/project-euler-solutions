@@ -7,7 +7,7 @@ import kotlin.test.assertEquals
 https://projecteuler.net/problem=39
  */
 
-fun findPerimeter(): Int {
+private fun findPerimeter(): Int {
     var max = 0
     var pMax = 0
     for (p in 3..1000) {
