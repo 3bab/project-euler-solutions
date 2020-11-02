@@ -11,7 +11,7 @@ How many such routes are there through a 20×20 grid?
 
 fun main() {
     val gridSize = 20
-    val grid = Array(gridSize + 1, {i -> LongArray(gridSize + 1, {j -> 1})})
+    val grid = Array(gridSize + 1) { i -> LongArray(gridSize + 1, { j -> 1 }) }
     // use dynamic programming
     for (i in gridSize - 1 downTo 0) {
         for (j in gridSize - 1 downTo 0) {

@@ -1,4 +1,4 @@
-package `20_FactorialDIgitSum`
+package `20_FactorialDigitSum`
 
 import java.math.BigInteger
 import kotlin.test.assertEquals

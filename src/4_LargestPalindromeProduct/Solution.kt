@@ -25,7 +25,7 @@ fun main(args: Array<String>) {
     val start = System.currentTimeMillis();
     for (i in factorA until 1000) {
         for (j in factorB until 1000) {
-            if (isPalindrome(i * j) && i * j > max) {
+            if (isPalindrome(i * j, 10) && i * j > max) {
                 multiplierA = i
                 multiplierB = j
                 max = i * j
@@ -39,8 +39,8 @@ fun main(args: Array<String>) {
 }
 
 @ExperimentalUnsignedTypes
-fun isPalindrome(n: Long): Boolean {
-    val charArray = n.toULong().toString(radix = 10).toCharArray()
+fun isPalindrome(n: Long, base: Int): Boolean {
+    val charArray = n.toULong().toString(base).toCharArray()
     for (i in 0 until charArray.size / 2) {
         if (charArray[i] != charArray[charArray.size - 1 - i]) {
             return false

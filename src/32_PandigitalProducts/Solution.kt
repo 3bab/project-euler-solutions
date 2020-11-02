@@ -1,5 +1,6 @@
 package `32_PandigitalProducts`
 
+import fanta.isPandigital
 import java.util.*
 import java.util.stream.IntStream
 import kotlin.test.assertEquals
@@ -20,13 +21,7 @@ private fun findSum(): Int {
                 sb.clear()
                 continue
             }
-            for (counter in 1..9) {
-                if (!sb.contains(counter.toString())) {
-                    sb.clear()
-                    break
-                }
-            }
-            if (sb.isNotEmpty()) {
+            if (sb.toString().toInt().isPandigital()) {
                 sumSet.add(product)
                 sb.clear()
             }
